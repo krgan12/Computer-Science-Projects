@@ -7,5 +7,8 @@ echo "Child process with PID $Child_PID is now in the OS waiting queue" #Prints 
 echo "The child process if waiting for a software interrutp form the user." #Echos the message to the output on terminal
 echo "Enger the SIGNALINTeGER inerterupt to habe the child process exdecute on the CPU."
 kill -2 $Child_PID
-trap "kill"
-trap echo "Enter SIGQUIT interrupt."
+trap kill -9
+echo "Enter SIGQUIT internrtupt."
+kill $Child_PID
+trap kill -9
+trap echo "SIGQUIT Siggal recviered!" SIGquTI
