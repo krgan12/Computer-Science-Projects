@@ -12,7 +12,7 @@ echo "The child process is waiting for a software interrupt from the user." #Ech
 echo "Enter the SIGINT interrupt to have the child process execute on the CPU." #Echos 'Enter the SIGINT interrupt to have the child process execute on the CPU.' to the stdout
 trap 'echo; echo SIGINT signal received!' SIGINT #Moves child process from running state to the waiting state and the user has to input: control+c
 echo "Enter SIGQUIT interrupt." #Prints to the stdout
-trap echo $Child_PID 'SIGQUIT signal received!' SIGQUIT #Moves the child process again
+trap 'echo; echo SIGQUIT signal received!' SIGQUIT #Moves the child process again and the user has to input: control+\
 echo "Completed executing." #Echos 'Completed executing.' to the stdout
 echo "Terminating all processes." #Prints 'Terminating all processes.' to the stdout
 exit 1 #Exits out of the program with no errors
