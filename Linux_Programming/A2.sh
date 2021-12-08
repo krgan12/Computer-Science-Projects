@@ -10,9 +10,9 @@ echo "Child PID is $Child_PID"
 echo "Child process with PID $Child_PID is now in the OS waiting queue." #Prints the message
 echo "The child process is waiting for a software interrupt from the user." #Echos the message to the output on terminal
 echo "Enter the SIGINT interrupt to have the child process execute on the CPU." #Echos 'Enter the SIGINT interrupt to have the child process execute on the CPU.' to the stdout
-trap echo $Child_PID 'SIGINT signal received!' SIGINT #Moves child process from running state to the waiting state
+trap 'echo; echo SIGINT signal received!' SIGINT #Moves child process from running state to the waiting state and the user has to input: control+c
 echo "Enter SIGQUIT interrupt." #Prints to the stdout
 trap echo $Child_PID 'SIGQUIT signal received!' SIGQUIT #Moves the child process again
 echo "Completed executing." #Echos 'Completed executing.' to the stdout
 echo "Terminating all processes." #Prints 'Terminating all processes.' to the stdout
-exit 2 #Exits out of the program with no errors
+exit 1 #Exits out of the program with no errors
