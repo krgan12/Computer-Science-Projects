@@ -1,0 +1,68 @@
+/* Setting the Web Site's background colour to white */
+body {
+    background-color: #FFFFFF;   
+}
+
+/*Styling the top header */
+.header {
+    padding: 0.2%;
+    text-align: center;
+    background-color: lightgray;
+}
+/* Styling the h1 title*/
+h1 {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 30px;
+    padding: 5px;
+    margin: 1px;
+}
+
+/* Adding a black border around the page */
+.border {
+    border-left: 3px solid;
+    border-right: 3px solid;
+    position: relative;
+    border-bottom: none;
+    border-color: #000000;
+    top: -9px;
+}
+
+/* Underlining the CD information to make it easier for the user to read */
+ul li {
+    padding: 8px 16px;
+    border-bottom: 1px solid #ddd;
+    width: 1615px;
+    position: relative;
+}
+/* Giving the list items a font-family of Times New Roman */
+li {
+    font-family:'Times New Roman', Times, serif;
+    /* Increasing the font size to make it more readable to the user */
+    font-size: 18px;
+}
+
+/* Styling every other element in the CD list */
+.bold {
+    font-weight: bold;
+}
+
+/* Styling the square bullet for the artist */
+.square-bullet {
+    list-style-type: square;
+}
+
+
+/* Styling the name font color */
+span {
+    color: white;
+}
+/* Styling the bottom footer */
+.footer {
+    background-color: gray;
+    padding: 0.000888%;
+    position: relative;
+    text-align: center;
+    height: 10%;
+    margin-top: 0.5px;
+    top: -50px;
+}
