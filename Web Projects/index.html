@@ -1,0 +1,133 @@
+<!--Author: Keagan Rodrigues
+Date: Wednesday November 9
+Travel Booking Site-->
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <!--Linking the stylesheet to this file-->
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+  <!--Linking the icons to this file-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <title>Travel Booking</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <meta name="description" content="This is a website that you can book your trip to anywhere in the United States. Some conditions apply."/>
+  <meta name="author" content="Keagan Rodrigues"/>
+  <meta name="keywords" content="Trip, Flight, Akron-Canton, OH (CAK), Albany, NY (ALB), Round Trip, One Way, Orlando (MCO), Allenton (Lehigh Valley), PA (ABE), Appleton/Green Bay, WI (ATW), Asheville, NC (AVL), Austin, TX (AUS)"/>
+
+
+</head>
+
+<body>
+  <!--Adding the Title to show to the user-->
+  <div class="text-title"><h1>Book A Flight</h1></div>
+ 
+  <!--Breaking the lines to prevent overlap-->
+  <br><br>
+
+  <div class="whole-form">
+    <br>
+    <!--Creating the radio buttons-->
+    <label class="route-transfer">&nbsp;Round Trip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="radio" checked="checked" name="radio">
+      <span class="checkmark"></span>
+    </label>
+    <label class="route-transfer">&nbsp;One Way
+      <input type="radio" name="radio">
+      <span class="checkmark"></span>
+    </label>
+   
+
+    <div></div>
+    <form autocomplete="off">
+
+      <div id="to_and_from">
+        <!--Breaking the lines to prevent labels/input boxes from overlapping-->
+        <br>
+        <br>
+        <!--Adding the depature airport user input but can only be the values from the datalist)-->
+        <input type="rext" id="ffrom" class="frominput" name="ffrom" placeholder="Departure, airport" required list="departures"/>
+        <!--Creating the drop down list when the user types (see list above)-->
+        <datalist id="departures">
+          <option value="Akron-Canton, OH (CAK)"></option>
+          <option value="Albany, NY (ALB)"></option>
+          <option value="Allenton (Lehigh Valley), PA (ABE)"></option>
+          <option value="Appleton/Green Bay, WI (ATW)"></option>
+          <option value="Asheville, NC (AVL)"></option>
+          <option value="Austin, TX (AUS)"></option>
+        </datalist>
+        <!--Breaking the lines to ensure the information is spaced out-->
+        <br> 
+        <br>
+        
+        <!--Making the from label-->
+        <label class="title" id="label1" for="">From</label>
+        <!--Breaking the line-->
+        <br>
+        <!--Adding the destination airport, that will also autocomplete suggest to the user-->
+        <input class="tolabel" type="text" id="to" name="to" placeholder="Destination, airport" required list="destinations"/>
+        <!--Making the autocomplete mandatory selection for the user-->
+        <datalist id="destinations">
+          <option value="Orlando (MCO)"></option>
+        </datalist>
+        <!--Making the to label-->
+        <label class="title" id="label2" for="to">To</label>
+
+
+      
+      </div>
+
+      <br>
+
+      <div class="DateField">
+        <!--Creating the depature date label and the date selection-->
+        <label class="title" id="ddlabel" for="ddate">Departure Date</label>
+        <input type="text" id="ddate" name="ddate" required placeholder="Click to Choose" onfocus="(this.type='date')"/>
+
+      </div>
+      <div class="DateField">
+         <!--Creating the destination date label and the date selection-->
+        <label class="title" id="rdlabel" for="rdate">Return Date</label>
+        <input type="text" id="rdate" name="rdate" required onfocus="(this.type='date')" placeholder="Click to Choose"/>
+      </div>
+
+        <label class="title" id="travellers" for="travellers">Travellers</label>
+        <!--Making the number of travellers the user wants to take, onchange updates the label underneath it to the number chosen (refer to JS)-->
+        <select class="passengers" id="drpdwn_size" required placeholder="Please select" onchange="travlselect()">
+          
+          <option value="">
+            1
+          </option>
+
+          <option value="passengers">2</option>
+          <option value="passengers">3</option>
+          <option value="passengers">4</option>
+          <option value="passengers">5</option>
+        </select>
+        <!--Updates when the user chooses the # of passengers-->
+        <input name="valuedisplay" type="text" id="txtvalue"/>
+        <!--Adding the seated label underneath travellers-->
+        <label id="sloc">Seated</label>
+          <!--Breaking the lines to fix formatting (uncomment to see the difference)-->
+          <br>
+          <br>
+          <br>
+          <div></div>
+          <span id="lb"></span>
+          <!--Creating the other 3 options for the user-->
+          <div class="header-top">
+            <a href="#" id="hmlayout">Optional Services & Fees</a> 
+            <a href="#" id="cnta"></a> | 
+          <span><a href="#" id="lgin">Changed Bag Fees & Policy</a> | </span><span><a id="regex" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">10+ Travelers</a></span>	
+              
+              <div class="addthis_sharing_toolbox_i7jo" ></div>	
+            </div>
+          <!--Creating the submit button that will check for all cases in the form.-->
+          <button id="srch_btn" type="button" onclick="validate()">Submit</button>
+     
+    </form>
+  </div>
+  <!--Linking the JavaScript file-->
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
